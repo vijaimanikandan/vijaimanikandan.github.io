@@ -82,8 +82,10 @@ $(document).ready(function() {
 	let daysInCanada = [];
 	daysInCanada.push({"start":new Date("2018-02-10T00:00:00Z"),"end":new Date("2018-02-10T00:00:00Z")});
 	daysInCanada.push({"start":new Date("2020-10-07T00:00:00Z"),"end":new Date("2020-11-06T00:00:00Z")});
-	daysInCanada.push({"start":new Date("2021-01-17T00:00:00Z"),"end":new Date()});
+	daysInCanada.push({"start":new Date("2021-01-17T00:00:00Z"),"end":new Date("2022-09-02T00:00:00Z")});
+	daysInCanada.push({"start":new Date("2022-09-25T00:00:00Z"),"end":new Date()});
 	var numDays = Math.floor(daysInCanada.reduce((acc, x) => {
+	  if(x['start'].getTime() > (new Date()).getTime()) return acc;
 	  return acc + Math.abs(x['start'].getTime() - x['end'].getTime())/(1000*60*60*24) + 1;
 	}, 0));
 	var ordinal = ['th','st','nd','rd','th','th','th','th','th','th'].filter((x, i) => (i == numDays%10));

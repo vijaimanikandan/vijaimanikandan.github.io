@@ -84,7 +84,9 @@ $(document).ready(function() {
 	daysInCanada.push({"start":new Date("2020-10-07T00:00:00Z"),"end":new Date("2020-11-06T00:00:00Z")});
 	daysInCanada.push({"start":new Date("2021-01-17T00:00:00Z"),"end":new Date("2022-09-02T00:00:00Z")});
 	daysInCanada.push({"start":new Date("2022-09-25T00:00:00Z"),"end":new Date("2022-11-23T00:00:00Z")});
-	daysInCanada.push({"start":new Date("2022-11-30:00:00Z"),"end":new Date()});
+	daysInCanada.push({"start":new Date("2022-09-25T00:00:00Z"),"end":new Date("2022-11-23T00:00:00Z")});
+	daysInCanada.push({"start":new Date("2022-11-30:00:00:00Z"),"end":new Date("2023-01-31:00:00:00Z")});
+	daysInCanada.push({"start":new Date("2023-02-24:00:00:00Z"),"end":new Date()});
 	var numDays = Math.floor(daysInCanada.reduce((acc, x) => {
 	  if(x['start'].getTime() > (new Date()).getTime()) return acc;
 	  return acc + Math.abs(x['start'].getTime() - x['end'].getTime())/(1000*60*60*24) + 1;
